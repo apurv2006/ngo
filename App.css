@@ -1,0 +1,514 @@
+/* Basic Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+header {
+  background-color: #6a5acd;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  background-color: #4682b4;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff7f50; /* Coral color on hover */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ff7f50;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+h1, h2 {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 1.2em;
+  width: 80%;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button Hover Animation */
+button, .btn {
+  padding: 10px 20px;
+  background-color: #ff7f50; /* Coral */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #e2723e; /* Darker Coral */
+  transform: scale(1.05); /* Slightly enlarges the button */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Bounce Effect on Click */
+button:active, .btn:active {
+  transform: scale(0.95); /* Shrinks slightly on click */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+/* Adding Images */
+form img {
+  max-width: 50px; /* Smaller size */
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%; /* Rounded corners */
+}
+
+.donation-method {
+  margin-bottom: 20px;
+}
+
+/* Container Styles for Modern Look */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  background-color: #fafafa; /* Soft background change */
+  transform: translateY(-5px); /* Lifts the card slightly */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a shadow */
+}
+
+.card img {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin: 15px;
+}
+
+.card p {
+  font-size: 1em;
+  margin: 15px;
+  line-height: 1.6;
+}
+
+.card a {
+  display: block;
+  margin: 15px;
+  padding: 10px;
+  background-color: #6495ed;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.card a:hover {
+  background-color: #4169e1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+    width: 95%;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+/* Existing CSS... */
+
+/* NGO Details Page Styles */
+.ngo-details {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.ngo-details img {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.ngo-details h2 {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.ngo-details p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.ngo-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ngo-details ul li {
+  margin: 10px 0;
+}
+
+.ngo-details a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6495ed;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.ngo-details a.btn:hover {
+  background-color: #4169e1;
+}
+/* About Section Styles */
+.about {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about h3 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6495ed;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.about .btn:hover {
+  background-color: #4169e1;
+}
+/* Home Page Styles */
+.home {
+  text-align: center;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: white;
+  position: relative;
+}
+
+.hero .logo {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6495ed;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero .btn:hover {
+  background-color: #4169e1;
+}
+
+.highlights, .featured-ngos, .get-involved, .contact-us {
+  padding: 50px 20px;
+  background-color: #f0f8ff;
+}
+
+.highlights h2, .featured-ngos h2, .get-involved h2, .contact-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.highlight-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.contact-us p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+/* Volunteer Page Styles */
+.volunteer {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.volunteer h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.volunteer p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.opportunity-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.get-involved ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.get-involved ul li {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.get-involved .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6495ed;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.get-involved .btn:hover {
+  background-color: #4169e1;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f1c40f; /* Gold */
+  color: #2b2b4f; /* Deep rich purple */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #f39c12; /* Darker gold */
+  transform: scale(1.1);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
